@@ -14,7 +14,7 @@ def Clean_json(respons: dict):
         )
 
 def connecting_servers(data:CoordinatIp):
-    service_b_host = os.getenv("SERVICE_B_HOST")
-    service_b = f"http://{service_b_host}:8001/coordinates"
+    url = os.getenv("SERVICE_B_URL", "http://127.0.0.1:8001")
+    service_b = f"{url}/coordinates"
     response = requests.post(service_b, json=data.model_dump())
     return response.status_code
