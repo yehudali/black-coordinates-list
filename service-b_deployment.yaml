@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: service-b
-        image: yehudalinker/service-b:v1
+        image: yehudalinker/service-b:v3
         ports:
         - containerPort: 8001
         env:
